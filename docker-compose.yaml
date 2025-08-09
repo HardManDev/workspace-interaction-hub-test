@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:17.5-alpine3.22
+    container_name: postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-workspace_interaction_hub}
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}"
+    restart: unless-stopped
+
+  server:
+    container_name: server
+    build:
+      context: .
+      dockerfile: ./packages/server/Dockerfile
+    ports:
+      - "${SERVER_PORT:-3000}:${SERVER_PORT:-3000}"
+    environment:
+      PORT: ${SERVER_PORT:-3000}
+      POSTGRES_DB: ${POSTGRES_DB:-workspace_interaction_hub}
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+      POSTGRES_HOST: ${POSTGRES_HOST:-postgres}
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  client:
+    container_name: client
+    build:
+      context: .
+      dockerfile: ./packages/client/Dockerfile
+      args:
+        - VITE_API_BASE_URL=${VITE_API_BASE_URL:-http://localhost:3000/}
+    ports:
+      - "${CLIENT_PORT:-3001}:${CLIENT_PORT:-3001}"
+    depends_on:
+      - server
+    restart: unless-stopped
+
+volumes:
+  pg-data:

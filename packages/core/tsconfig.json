@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "ES2024",
+        "module": "ESNext",
+        "moduleResolution": "node",
+
+        "outDir": "./dist",
+        "baseUrl": "./",
+
+        "sourceMap": true,
+        "declaration": true,
+        "removeComments": true,
+
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "useDefineForClassFields": false,
+
+        "noImplicitAny": false,
+        "strictBindCallApply": false,
+        "noFallthroughCasesInSwitch": false,
+        "skipLibCheck": true,
+        "strictNullChecks": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "workspace-interaction-hub",
+  "description": "Software for provide interaction between employees of an organization within a local network",
+  "version": "0.0.1",
+  "author": {
+    "name": "HardManDev",
+    "email": "hardman.develop@proton.me"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {}
+}

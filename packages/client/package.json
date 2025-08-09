@@ -1,0 +1,45 @@
+{
+  "name": "@workspace-interaction-hub/client",
+  "description": "Client for Workspace Interaction Hub - Software for provide interaction between employees of an organization within a local network",
+  "type": "module",
+  "version": "0.0.1",
+  "author": {
+    "name": "HardManDev",
+    "email": "hardman.develop@proton.me"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "start:release": "vite preview"
+  },
+  "dependencies": {
+    "@radix-ui/react-icons": "^1.3.2",
+    "@workspace-interaction-hub/core": "*",
+    "clsx": "^2.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.7.1",
+    "react-toastify": "^11.0.5",
+    "tailwindcss": "^4.1.11",
+    "zustand": "^5.0.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/node": "^24.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react-swc": "^3.10.2",
+    "eslint": "^9.32.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "prettier": "3.6.2",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "vite": "^7.0.4"
+  }
+}
