@@ -5,11 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
     plugins: [react(), tailwindcss()],
     server: {
-        allowedHosts: [
-            'wih.hardman-dev.cc', // твой Cloudflare домен
-            '*.trycloudflare.com', // на случай quick tunnel,c
-            'host.docker.internal'
-        ],
-        host: true // чтобы слушал на всех интерфейсах
+        allowedHosts: ['wih.hardman-dev.cc', 'wih', '*.trycloudflare.com', 'host.docker.internal'],
+        host: true
     }
 })
