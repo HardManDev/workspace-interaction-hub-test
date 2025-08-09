@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
     plugins: [react(), tailwindcss()],
     server: {
-        allowedHosts: ['wih.hardman-dev.cc', 'wih', '*.trycloudflare.com', 'host.docker.internal'],
+        allowedHosts: ['wih.hardman-dev.cc', 'wih.local', '*.trycloudflare.com', 'host.docker.internal'],
         host: true
     }
 })
